@@ -3,14 +3,7 @@ fn conf_enable_robot {
 }
 
 fn robot_init {
-	if(~ $req_path /){
-		handler_body_main=display
-#		extraHeaders=$"extraHeaders^'<script src="/Matrix3D.js"></script>'
-#		extraHeaders=$"extraHeaders^'<script src="/engine.js"></script>'
-		extraHeaders=$"extraHeaders^'<script src="/robot.js"></script>'
-		ll_add handlers_bar_left cat $werc_root^'/apps/robot/controls.htm'
-	}
-	if not if(~ $req_path /robot.js){
+	if(~ $req_path /robot.js){
 		echo 'Content-Type: text/plain'
 		echo
 		cat $werc_root^'/apps/robot'^$req_path
@@ -22,13 +15,5 @@ fn robot_init {
 				echo $"post_arg_dir >> /tmp/robot
 		}
 	}
-}
-
-fn display {
-	echo '<p>Please click slowly and wait for updates.</p>'
-	#echo '<p></p>'
-	echo '<img src="/robot.jpeg" id="video" style="width:600px;"/>'
-#	echo '<canvas style="width:300px; height:300px;" id="mainCanvas"/>'
-	#echo '<video autoplay="autoplay" src="http://echoline.org:8000/" />'
 }
 
