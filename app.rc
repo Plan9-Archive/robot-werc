@@ -3,10 +3,14 @@ fn conf_enable_robot {
 }
 
 fn robot_init {
-	if(~ $req_path /robot.js){
+	if(~ $req_path /){
+		extraHeaders=$"extraHeaders^'<script src="/robot.js"></script>'
+		ll_add handlers_bar_left cat $werc_root^'/apps/robot/controls.htm'
+	}
+	if not if(~ $req_path /robot.js){
 		echo 'Content-Type: text/plain'
 		echo
-		cat $werc_root^'/apps/robot'^$req_path
+		cat $werc_root^'/apps/robot/robot.js'
 		exit
 	}
 	if not if(~ $req_path /move){
