@@ -19,5 +19,12 @@ fn robot_init {
 				echo $"post_arg_dir >> /tmp/robot
 		}
 	}
+	if not if(~ $req_path /say){
+		if(~ $REQUEST_METHOD POST) {
+			if(! ~ x$"post_arg_dir x) {
+				echo $"post_arg_dir | sed 's/[^A-Za-z0-9\ ]//g' >> /tmp/voice
+			}
+		}
+	}
 }
 
