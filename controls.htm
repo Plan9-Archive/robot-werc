@@ -1,14 +1,13 @@
-<div class="col-md-8 text-center">
+<div style="text-align: center;">
 Camera:<br/>
-<input type="button" value="up" onclick="move('u')"/><br/>
-<input type="button" value="down" onclick="move('d')"/><br/>
+<input type="button" value="up" onmousedown="move('u')"/><br/>
+<input type="button" value="down" onmousedown="move('d')"/><br/>
 <br/>
 Wheels:<br/>
-<input type="button" value="left" onclick="move('l')"/>
-<input type="button" value="forward" onclick="move('f')"/>
-<input type="button" value="right" onclick="move('r')"/><br/>
+<input type="button" value="<<" onmousedown="move('l')"/>
+<input type="button" value="go" onmousedown="move('f')"/>
+<input type="button" value=">>" onmousedown="move('r')"/><br/>
 <br/>
 Text to Speech:<br/>
 <input type="text" id="tts" onkeypress="keypress(event);"/>
 </div>
-<div class="col-md-4"></div>
