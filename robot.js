@@ -24,20 +24,21 @@ document.onkeypress = function(event) {
 	 && event.target.type.toUpperCase() == 'TEXT')
 		return;
 
-	switch (event.keyCode & ~32) {
-	case 87:
+	var key = String.fromCharCode(event.charCode).toLowerCase();
+	switch (key) {
+	case 'w':
 		move('f');
 		break;
-	case 68:
+	case 'd':
 		move('r');
 		break;
-	case 65:
+	case 'a':
 		move('l');
 		break;
-	case 82:
+	case 'r':
 		move('u');
 		break;
-	case 70:
+	case 'f':
 		move('d');
 		break;
 	default:

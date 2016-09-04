@@ -16,7 +16,7 @@ fn robot_init {
 	if not if(~ $req_path /move){
 		if(~ $REQUEST_METHOD POST) {
 			if(~ $"post_arg_dir u d l f r)
-				echo $"post_arg_dir >> /tmp/robot
+				echo $"post_arg_dir >> /tmp/move
 		}
 	}
 	if not if(~ $req_path /say){
